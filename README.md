@@ -60,9 +60,6 @@ dependencies:
   http: ^1.2.1
   provider: ^6.1.2
 ```
-
----
-
 ## 5. Struktur Folder dan File
 
 Berikut struktur folder dan file beserta penjelasannya:

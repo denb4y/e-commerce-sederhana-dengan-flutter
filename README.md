@@ -26,10 +26,10 @@ Menurut Laudon & Laudon, e-commerce adalah transaksi business to business yang t
 
 ## 🛠️ Bahan & Tools
 
-1. **VS Code (Visual Studio Code)**  
+### 1. **VS Code (Visual Studio Code)**  
    Editor kode sumber modern yang ringan, kaya fitur, dan sangat cocok untuk pengembangan Flutter.
 
-2. **Ekstensi Flutter & Dart**  
+### 2. **Ekstensi Flutter & Dart**  
    - **Flutter**: Memungkinkan Anda membuat, menjalankan, dan mengelola proyek Flutter.
    - **Dart**: Bahasa pemrograman utama untuk membuat aplikasi Flutter.
 

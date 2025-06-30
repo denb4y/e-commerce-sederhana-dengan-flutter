@@ -50,7 +50,7 @@ cd toko_denbaayyy
 code .
 ```
 
-### 4. Menambahkan Dependency pada `pubspec.yaml`
+### 4. Menambahkan Dependencies pada `pubspec.yaml`
 ```yaml
 dependencies:
   flutter:

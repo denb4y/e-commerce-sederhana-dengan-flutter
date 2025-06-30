@@ -88,11 +88,6 @@ toko_denbaayyy/
 │   ├── widgets/
 │       ├── cart_dialog.dart
 │       └── cart_item_card.dart
-```
-
----
-
-## 📄 Penjelasan File-File
 
 ---
 

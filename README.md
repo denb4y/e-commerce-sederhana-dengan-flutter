@@ -932,7 +932,7 @@ class CartProvider with ChangeNotifier {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File cart_provider.dart berisi logika state management untuk keranjang belanja. Pertama, kita definisikan class CartItem yang menyimpan data produk dan jumlahnya. Kemudian kita buat class CartProvider dengan metode-metode utama seperti addItem(), removeItem(), increaseQuantity(), decreaseQuantity(), dan clearCart(). Kita juga menyediakan getter items untuk mendapatkan daftar item dalam keranjang, dan totalPrice untuk menghitung total harga semua barang. Setiap kali data berubah, kita memanggil notifyListeners() agar UI otomatis diperbarui.
 - `cart_dialog.dart`
 ```
 import 'package:flutter/material.dart';
@@ -1070,7 +1070,7 @@ class CartDialog extends StatelessWidget {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File cart_dialog.dart menampilkan dialog pop-up ketika ikon keranjang ditekan. Dialog ini menampilkan semua item dalam keranjang. Jika keranjang kosong, akan muncul ikon dan teks bahwa keranjang masih kosong. Jika tidak kosong, item ditampilkan dalam bentuk ListView.builder menggunakan widget CartItemCard. Di bagian bawah dialog terdapat total harga seluruh item dan tombol “Checkout” yang akan mengarahkan pengguna ke halaman pembayaran (PaymentScreen). Jika tombol ditekan saat keranjang kosong, maka akan muncul snackbar peringatan.
 - `api_service.dart`
 ```
 import 'dart:convert';
@@ -1228,7 +1228,7 @@ class CartItemCard extends StatelessWidget {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File cart_item_card.dart adalah widget yang menampilkan satu item dalam keranjang. Isinya berupa gambar produk, nama, harga, dan jumlah. Ada dua tombol untuk menambah dan mengurangi jumlah, serta tombol delete untuk menghapus item dari keranjang. Semua aksi ini terhubung dengan method yang ada di CartProvider. Setiap perubahan jumlah atau penghapusan akan otomatis memperbarui tampilan karena CartProvider menggunakan notifyListeners().
 ### 7. Testing (Menjalankan Aplikasi)
 - Buka terminal lalu ketik perintah `flutter pub get`.
 - Selanjutnya, ketik perintah `flutter run`.

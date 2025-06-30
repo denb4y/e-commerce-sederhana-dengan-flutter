@@ -1,16 +1,142 @@
-# toko_denbaayyy
 
-A new Flutter project.
+# 📦 Tutorial Membuat E-Commerce Sederhana Menggunakan Flutter
 
-## Getting Started
+## 👤 Identitas
+- **Nama:** Moch. Akbar Ramdani  
+- **NPM:** 20122010  
+- **Mata Kuliah:** Mobile Programming Lanjut  
+- **Keterangan:** Ditujukan untuk memenuhi tugas Evaluasi Akhir Semester (EAS)  
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 📖 Pengertian
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Apa itu E-Commerce?
+**Electronic Commerce (E-Commerce)** adalah proses transaksi jual beli yang dilakukan secara online melalui media elektronik.  
+Menurut Laudon & Laudon, e-commerce adalah transaksi business to business yang terjadi dengan perantara jaringan internet.  
+🔗 Referensi: [developers.bri.co.id](https://developers.bri.co.id/id/news/ketahui-perkembangan-e-commerce-di-indonesia-pengertian-jenis-dan-manfaatnya)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Apa itu Flutter?
+**Flutter** adalah kerangka kerja sumber terbuka yang dikembangkan oleh Google. Flutter digunakan oleh developer frontend dan full-stack untuk membangun UI aplikasi lintas platform dengan satu basis kode (single codebase).  
+🔗 Referensi: [himatro.ee.unila.ac.id](https://himatro.ee.unila.ac.id/apa-itu-flutter/)
+
+---
+
+## 🛠️ Bahan & Tools
+
+1. **VS Code (Visual Studio Code)**  
+   Editor kode sumber modern yang ringan, kaya fitur, dan sangat cocok untuk pengembangan Flutter.
+
+2. **Ekstensi Flutter & Dart**  
+   - **Flutter**: Memungkinkan Anda membuat, menjalankan, dan mengelola proyek Flutter.
+   - **Dart**: Bahasa pemrograman utama untuk membuat aplikasi Flutter.
+
+---
+
+## 🧑‍💻 Langkah-Langkah Pembuatan
+
+### 1. Membuat Folder & Menjalankan VS Code
+- Buat folder baru misalnya `e-commerce-sederhana`.
+- Buka folder tersebut di VS Code.
+
+### 2. Install Ekstensi
+- Buka menu Extensions (Ctrl+Shift+X).
+- Install: `Flutter` dan `Dart`.
+
+### 3. Membuat Project Flutter
+```bash
+flutter create toko_denbaayyy
+cd toko_denbaayyy
+code .
+```
+
+### 4. Menambahkan Dependency pada `pubspec.yaml`
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.2.1
+  provider: ^6.1.2
+```
+
+---
+
+## 📁 Struktur Folder dan File
+
+Berikut struktur folder dan file beserta penjelasannya:
+
+```
+toko_denbaayyy/
+├── lib/
+│   ├── main.dart
+│   ├── models/
+│   │   └── product.dart
+│   ├── providers/
+│   │   └── cart_provider.dart
+│   ├── screens/
+│   │   ├── auth/
+│   │   │   └── login_screen.dart
+│   │   ├── detail/
+│   │   │   └── product_detail_screen.dart
+│   │   ├── home/
+│   │   │   └── home_screen.dart
+│   │   └── payment/
+│   │       ├── payment_screen.dart
+│   │       └── payment_success_screen.dart
+│   ├── services/
+│   │   └── api_service.dart
+│   ├── widgets/
+│       ├── cart_dialog.dart
+│       └── cart_item_card.dart
+```
+
+---
+
+## 📄 Penjelasan File-File
+
+### 🔹 main.dart
+Entry point aplikasi. Menggunakan `ChangeNotifierProvider` untuk state management keranjang.
+
+### 🔹 product.dart
+Model data produk yang akan digunakan untuk parsing data dari API `https://dummyjson.com`.
+
+### 🔹 cart_provider.dart
+State management menggunakan `ChangeNotifier` untuk menambah, menghapus, dan menghitung total keranjang.
+
+### 🔹 login_screen.dart
+Halaman login yang menggunakan `ApiService.login()` untuk autentikasi dummy.
+
+### 🔹 home_screen.dart
+Menampilkan produk makanan dari kategori groceries menggunakan `FutureBuilder`.
+
+### 🔹 product_detail_screen.dart
+Menampilkan detail produk berdasarkan ID dari halaman sebelumnya.
+
+### 🔹 cart_dialog.dart & cart_item_card.dart
+Menampilkan keranjang belanja dan item dalam keranjang.
+
+### 🔹 payment_screen.dart & payment_success_screen.dart
+Simulasi halaman pembayaran dan suksesnya.
+
+### 🔹 api_service.dart
+Berisi method login, fetch list produk, dan fetch detail produk.
+
+---
+
+## 📸 Hasil Simulasi
+
+Semua hasil UI dapat dilihat pada folder `screenshoot/` dalam repo ini, meliputi:
+- Login
+- Home
+- Detail Produk
+- Keranjang
+- Pembayaran
+- Pembayaran Berhasil
+
+---
+
+## 🙏 Penutup
+
+Demikian dokumentasi aplikasi **E-Commerce Sederhana Menggunakan Flutter**.  
+Jika terdapat kesalahan atau kekurangan, saya mohon maaf.  
+Terima kasih telah membaca dan semoga bermanfaat 🎉

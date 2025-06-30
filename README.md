@@ -94,33 +94,6 @@ toko_denbaayyy/
 
 ## 📄 Penjelasan File-File
 
-### 🔹 main.dart
-Entry point aplikasi. Menggunakan `ChangeNotifierProvider` untuk state management keranjang.
-
-### 🔹 product.dart
-Model data produk yang akan digunakan untuk parsing data dari API `https://dummyjson.com`.
-
-### 🔹 cart_provider.dart
-State management menggunakan `ChangeNotifier` untuk menambah, menghapus, dan menghitung total keranjang.
-
-### 🔹 login_screen.dart
-Halaman login yang menggunakan `ApiService.login()` untuk autentikasi dummy.
-
-### 🔹 home_screen.dart
-Menampilkan produk makanan dari kategori groceries menggunakan `FutureBuilder`.
-
-### 🔹 product_detail_screen.dart
-Menampilkan detail produk berdasarkan ID dari halaman sebelumnya.
-
-### 🔹 cart_dialog.dart & cart_item_card.dart
-Menampilkan keranjang belanja dan item dalam keranjang.
-
-### 🔹 payment_screen.dart & payment_success_screen.dart
-Simulasi halaman pembayaran dan suksesnya.
-
-### 🔹 api_service.dart
-Berisi method login, fetch list produk, dan fetch detail produk.
-
 ---
 
 ## 📸 Hasil Simulasi

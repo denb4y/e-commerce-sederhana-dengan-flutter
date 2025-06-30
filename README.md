@@ -96,12 +96,12 @@ toko_denbaayyy/
 ## 📸 Hasil Simulasi
 
 Semua hasil UI dapat dilihat pada folder `screenshoot/` dalam repo ini, meliputi:
-- Login
-- Home
-- Detail Produk
-- Keranjang
-- Pembayaran
-- Pembayaran Berhasil
+✅ Login
+✅ Home
+✅ Detail Produk
+✅ Keranjang
+✅ Pembayaran
+✅ Pembayaran Berhasil
 
 ---
 

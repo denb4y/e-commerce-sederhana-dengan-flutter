@@ -61,7 +61,7 @@ dependencies:
 
 ---
 
-## 📁 Struktur Folder dan File
+## 5. Struktur Folder dan File
 
 Berikut struktur folder dan file beserta penjelasannya:
 

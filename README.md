@@ -122,7 +122,7 @@ class MyApp extends StatelessWidget {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File main.dart merupakan titik awal dari aplikasi Flutter. Di dalamnya, kita menggunakan runApp() untuk menjalankan widget utama aplikasi yaitu MyApp. Namun sebelum itu, widget tersebut dibungkus oleh ChangeNotifierProvider yang berasal dari package provider, di mana CartProvider disediakan sebagai state global untuk mengelola data keranjang belanja. Ini sangat penting karena nanti banyak bagian aplikasi yang membutuhkan akses ke data keranjang. Kelas MyApp sendiri adalah turunan dari StatelessWidget, yang di dalamnya terdapat MaterialApp sebagai pembungkus utama UI aplikasi. Properti title memberi nama aplikasi, debugShowCheckedModeBanner: false menyembunyikan label debug, theme mengatur warna utama (oranye), dan home menunjuk ke halaman pertama yaitu LoginScreen.
 - `login_screen.dart`
 ```
 import 'package:flutter/material.dart';
@@ -244,7 +244,7 @@ class _LoginScreenState extends State<LoginScreen> {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### Pada file login_screen.dart, kita membuat halaman login menggunakan StatefulWidget karena membutuhkan state perubahan saat proses login berlangsung (misalnya loading). Di bagian atas kelas _LoginScreenState, kita membuat dua buah controller untuk menangkap input username dan password. Kemudian, kita inisialisasi ApiService yang akan digunakan untuk memanggil API login. Variabel _isLoading digunakan untuk menandakan proses sedang berlangsung. Fungsi _login() berisi logika proses login: saat tombol ditekan, status loading berubah menjadi true, kemudian API dipanggil dengan data dari form. Jika berhasil, akan ditampilkan snackbar “Login Berhasil” dan pengguna diarahkan ke halaman HomeScreen. Jika gagal, akan muncul pesan error. Di dalam method build(), kita menampilkan AppBar, form input, dan tombol login. Tombol akan berubah menjadi CircularProgressIndicator saat loading. Form input menggunakan TextField dengan ikon dan border melengkung untuk tampilan menarik dan user-friendly.
 - `home_screen.dart`
 ```
 import 'package:flutter/material.dart';
@@ -408,7 +408,7 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File home_screen.dart berfungsi sebagai halaman utama setelah login berhasil. Di dalam initState, kita mengambil daftar produk dari API menggunakan method getFoodProducts() dan menyimpannya dalam Future<List<Product>>. Kemudian, di dalam widget build, kita menggunakan FutureBuilder untuk menunggu data produk dimuat. Jika loading, akan tampil CircularProgressIndicator, jika error akan muncul pesan error, dan jika berhasil maka ditampilkan dalam bentuk GridView.builder. Setiap item produk ditampilkan dalam Card dengan gambar, nama produk, harga, dan tombol untuk menambahkan ke keranjang. Jika produk sudah ada di keranjang, tombol berubah menjadi ikon centang. Selain itu, terdapat ikon keranjang di AppBar yang jika ditekan akan membuka CartDialog.
 - `product_detail_screen.dart`
 ```
 import 'package:flutter/material.dart';
@@ -575,7 +575,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File product_detail_screen.dart menampilkan halaman detail dari satu produk. Halaman ini menerima productId dari halaman sebelumnya. Di dalam initState, kita memanggil getProductDetail() dari ApiService untuk mengambil data detail produk berdasarkan ID. Jika data berhasil diambil, maka ditampilkan gambar produk, nama, harga, rating, kategori, dan deskripsi. Di bagian bawah terdapat tombol “Masukan Keranjang” yang akan berubah menjadi “Sudah di Keranjang” jika produk sudah ditambahkan. Tombol ini juga memanggil addItem() dari CartProvider untuk menambahkan produk ke keranjang. Seluruh isi halaman dibungkus dalam SingleChildScrollView agar bisa di-scroll jika konten panjang.
 - `payment_screen.dart`
 ```
 import 'package:flutter/material.dart';
@@ -740,7 +740,7 @@ class PaymentScreen extends StatelessWidget {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File payment_screen.dart adalah halaman pembayaran yang menampilkan ringkasan pesanan. Jika keranjang kosong, maka akan muncul pesan bahwa tidak ada yang perlu dibayar. Jika ada isi keranjang, maka ditampilkan dalam bentuk ListView, dengan setiap item ditampilkan bersama jumlah, harga satuan, dan subtotal. Di bagian bawah terdapat informasi metode pembayaran (simulasi) dan total yang harus dibayar. Ketika tombol “Bayar Sekarang” ditekan, data keranjang akan dikosongkan dengan clearCart(), lalu diarahkan ke halaman PaymentSuccessScreen.
 - `payment_success_screen.dart`
 ```
 import 'package:flutter/material.dart';
@@ -812,7 +812,7 @@ class PaymentSuccessScreen extends StatelessWidget {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File payment_success_screen.dart adalah halaman konfirmasi bahwa pembayaran berhasil. Ditampilkan ikon centang besar berwarna hijau dan pesan ucapan terima kasih. Di bagian bawah terdapat tombol “Kembali ke Beranda” yang akan mengarahkan pengguna kembali ke HomeScreen, serta menghapus riwayat sebelumnya agar tidak bisa kembali ke halaman sebelumnya menggunakan tombol back.
 - `product.dart`
 ```
 class Product {
@@ -860,7 +860,7 @@ class Product {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File product.dart merupakan model dari data produk yang kita ambil dari API. Di dalamnya terdapat berbagai atribut seperti id, title, description, price, rating, category, dan lain-lain. Kita juga membuat factory method Product.fromJson yang berfungsi untuk mengubah data JSON yang diterima dari API menjadi objek Product di dalam aplikasi Flutter. Ini sangat penting agar data dapat diolah dan ditampilkan dengan mudah dalam widget.
 - `cart_provider.dart`
 ```
 import 'package:flutter/material.dart';
@@ -1126,7 +1126,7 @@ class ApiService {
 }
 ```
 #### Penjelasannya:
-##### kvnrwivnwrvn
+##### File api_service.dart berisi fungsi-fungsi HTTP yang mengakses API. Terdapat tiga fungsi utama: login() untuk autentikasi, getFoodProducts() untuk mendapatkan daftar produk dari kategori groceries, dan getProductDetail() untuk mengambil detail sebuah produk berdasarkan ID. Semua request menggunakan package http dan data di-decode dari JSON ke objek dart menggunakan jsonDecode. Di sini kita juga mengatur header seperti Content-Type: application/json.
 - `cart_item_card.dart`
 ```
 import 'package:flutter/material.dart';

@@ -1237,7 +1237,7 @@ class CartItemCard extends StatelessWidget {
 
 ## 📸 Hasil Simulasi
 
-Semua hasil UI dapat dilihat pada folder `SS_an/` dalam repo ini, meliputi:
+### Semua hasil UI dapat dilihat pada folder `SS_an/` dalam repo ini, meliputi:
 ✅ Login <br> 
 ✅ Home <br> 
 ✅ Detail Produk <br> 

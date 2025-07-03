@@ -1,4 +1,3 @@
-
 # 📦 Tutorial Membuat E-Commerce Sederhana Menggunakan Flutter
 
 ---
@@ -1238,7 +1237,7 @@ class CartItemCard extends StatelessWidget {
 
 ## 📸 Hasil Simulasi
 
-Semua hasil UI dapat dilihat pada folder `screenshoot/` dalam repo ini, meliputi:
+Semua hasil UI dapat dilihat pada folder `SS_an/` dalam repo ini, meliputi:
 ✅ Login <br> 
 ✅ Home <br> 
 ✅ Detail Produk <br> 
